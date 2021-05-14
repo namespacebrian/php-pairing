@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * This script runs the Monty Hall game. It does the following:
+ *   - Includes the Composer autoload file
+ *   - Instantiates the game
+ *   - Runs the game
+ *   - Exits with a status code 0 for win and 1 for loss
+ */
+
+$pharPath = \Phar::running(true);
+if ($pharPath) {
+    include_once("$pharPath/vendor/autoload.php");
+} elseif (file_exists($path = __DIR__ . '/../vendor/autoload.php')
+    || file_exists($path = __DIR__ . '/../../autoload.php')
+    || file_exists($path = __DIR__ . '/../../../autoload.php')
+) {
+    include_once($path);
+} else {
+    throw new \Exception('Could not locate autoload.php');
+}
+
+
+use Pantheon\PhpPairing\MontyHall;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+/**
+ * Run the Monty Hall game
+ */
+$monty_hall = new MontyHall();
+$status_code = $monty_hall->run();
+exit($status_code);

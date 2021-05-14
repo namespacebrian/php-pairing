@@ -1,0 +1,33 @@
+{
+    "name": "pantheon-systems/php-pairing",
+    "description": "A fun app to pair on.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sara McCutcheon",
+            "email": "sara+github@pantheon.io"
+        }
+    ],
+    "homepage": "https://pantheon.io",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": [
+        "bin/monty-hall"
+    ],
+    "scripts": {
+        "lint": "phpcs src"
+    },
+    "autoload": {
+      "psr-4": {
+        "Pantheon\\PhpPairing\\": "src/"
+      }
+    },
+    "require": {
+        "php": ">=8.0.6",
+        "symfony/console": "^5.2"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6"
+    }
+}
