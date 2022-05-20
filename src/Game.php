@@ -9,7 +9,7 @@
  * @link     https://pantheon.io
  */
 
-namespace Pantheon\PhpPairing\Models;
+namespace Pantheon\PhpPairing;
 
 /**
  * Class Game

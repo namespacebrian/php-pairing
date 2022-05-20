@@ -9,7 +9,7 @@
  * @link     https://pantheon.io
  */
 
-namespace Pantheon\PhpPairing\Models;
+namespace Pantheon\PhpPairing;
 
 /**
  * Class Stage
@@ -23,7 +23,7 @@ namespace Pantheon\PhpPairing\Models;
 class Stage
 {
     /**
-     * The doors with with the game is played
+     * The doors with which the game is played
      *
      * @var array
      */
@@ -145,8 +145,8 @@ class Stage
     private function _installDoors(int $number_of_doors): void
     {
         $winning_door = $this->_pickWinningDoorNumber($number_of_doors);
-        for ($i = 0; $i < $number_of_doors; $i++) {
-            $this->_doors[] = new Door($i, $winning_door === $i);
+        for ($i = 1; $i <= $number_of_doors; $i++) {
+            $this->_doors[$i] = new Door($i, $winning_door === $i);
         }
     }
 
