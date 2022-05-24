@@ -1,28 +1,11 @@
 #!/usr/bin/env php
 <?php
-namespace Pantheon\PhpPairing;
-
-//use Pantheon\PhpPairing\Game;
-//spl_autoload_register(function ($class) {
-//  // Adapt this depending on your directory structure
-//  $parts = explode('\\', $class);
-//  include "./src/" . end($parts) . '.php';
-//});
 
 include "./src/Door.php";
 include "./src/Game.php";
 include "./src/Stage.php";
 
 $game = new Game();
-
-//if(empty($argv[1]) || !is_numeric($argv[1])) {
-//  echo "\n";
-//  echo "Usage: " . $argv[0] . " <integer>\n";
-//  echo "\n";
-//  exit(1);
-//}
-//echo "You chose door #" . $argv[1] . "\n\n";
-//$game->selectDoor($argv[1]);
 
 echo "\n";
 
@@ -49,16 +32,15 @@ while ($game->getNumberOfClosedDoors() > 2) {
 
   $remaining_closed_doors = $game->getClosedDoorNumbers();
 
-  echo PHP_EOL . 'One of these remaining doors is a winner: '
-    . implode(', ', $remaining_closed_doors) . "\n\n";
+  echo "\nOne of these remaining doors is a winner: " . implode(', ', $remaining_closed_doors) . "\n\n";
 
-  $question =  'Will you change your selection? (yes/no) ';
+  $question = 'Will you change your selection? (yes/no) ';
 
   $will_reselect = '';
   while(strtolower(trim($will_reselect)) != "yes" && strtolower(trim($will_reselect)) != "no") {
     $will_reselect = readline($question);
   }
-//  echo "\n You said $will_reselect\n\n";
+  // echo "\n You said $will_reselect\n\n";
 
   if (strtolower(trim($will_reselect)) == "yes") {
     select_door($game);

@@ -1,21 +1,7 @@
 <?php
 /**
- * PHP version 8
- *
- * @category Models
- * @package  Pantheon\PhpPairing\Models
- * @author   Sara McCutcheon <sara@pantheon.io>
- * @license  MIT <https://opensource.org/licenses/MIT>
- * @link     https://pantheon.io
- */
-
-namespace Pantheon\PhpPairing;
-
-/**
  * Class Game
  *
- * @category Models
- * @package  Pantheon\PhpPairing\Models
  * @author   Sara McCutcheon <sara@pantheon.io>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     https://pantheon.io
